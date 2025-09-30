@@ -2,9 +2,10 @@
   "name": "inventory_management_system_api",
   "version": "1.0.0",
   "description": "Inventory Management System API Backend Project",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "keywords": [
     "javascript",
@@ -12,5 +13,14 @@
     "backend"
   ],
   "author": "Aman Pawar",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
 }
