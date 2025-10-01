@@ -58,7 +58,7 @@ export const decreaseStockQuantity = (req, res) => {
         const newStock = row.Stock_Quantity - stock_quantity;
 
         if(newStock < 0){
-           return res.status(400).json({error: "Stock Quantity cannot go below zero"});
+           return res.status(400).json({error: "Insufficient stock is available"});
         }
         
         const updateStockQuantity = 'UPDATE Products SET Stock_Quantity = ? WHERE id = ?';
