@@ -20,12 +20,14 @@ const db = new sqlite3.Database('./inventory.db', (err) => {
 //     }
 // })
 
+
 db.run(
     `CREATE TABLE IF NOT EXISTS Products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     Name TEXT,
     Description TEXT,
-    Stock_Quantity INTEGER
+    Stock_Quantity INTEGER,
+    Low_Stock_Threshold INTEGER DEFAULT 30
     )`,
     (err) => {
         if(err) {
