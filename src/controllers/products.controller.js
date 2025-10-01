@@ -13,14 +13,14 @@ export const getAllProducts = (req, res) => {
 }
 
 export const createProducts = (req, res) => {
-    const {name, description, stock_quantity} = req.body;
+    const {name, description, stock_quantity, low_stock_threshold} = req.body;
     const sql = `
     INSERT INTO Products (
-    Name, Description, Stock_Quantity
-    ) VALUES (?, ?, ?)
+    Name, Description, Stock_Quantity, Low_Stock_Threshold
+    ) VALUES (?, ?, ?, ?)
     `;
     const params = [
-        name, description, stock_quantity
+        name, description, stock_quantity, low_stock_threshold || 30
     ];
 
     db.run(sql, params, function (err) {
@@ -70,7 +70,7 @@ export const deleteProducts = (req, res) => {
             if(this.changes === 0){
                 return res.status(400).json({error: 'Product not found'})
             }
-            res.json({message: 'Property deleted', changes: this.changes});
+            res.json({message: 'Product deleted', changes: this.changes});
         });
 };
 
