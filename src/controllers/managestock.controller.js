@@ -77,3 +77,18 @@ export const decreaseStockQuantity = (req, res) => {
         })
     })
 }
+
+export const productsBelowThreshold = (req, res) => {
+    db.all('SELECT * FROM Products WHERE Stock_Quantity < Low_Stock_Threshold', (err, rows) => {
+        if(err){
+            console.error('Database Read Error:', err);
+            return res.status(500).json({error: 'Failed to list products below low stock quantity threshold'});
+        }
+        if(rows.length == 0){
+           return res.status(404).json({errror: 'No Products found below low stock quantity threshold'})
+        }
+        res.status(200).json(rows);
+    })
+}
+
+
