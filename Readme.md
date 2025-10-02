@@ -121,7 +121,7 @@ http://localhost:3000
 
 ## 📦 Sample JSON Data for POST Requests
 
-```json
+```
 {
   "name": "Keyboard",
   "description": "Wireless mechanical keyboard",
@@ -132,7 +132,7 @@ http://localhost:3000
 }
 ```
 
-```json
+```
 {
   "name": "Mouse",
   "description": "Bluetooth ergonomic mouse",
@@ -143,7 +143,7 @@ http://localhost:3000
 }
 ```
 
-```json
+```
 {
   "name": "Monitor",
   "description": "27-inch 4K UHD monitor",
@@ -154,7 +154,7 @@ http://localhost:3000
 }
 ```
 
-*(Omit `low_stock_threshold`; defaults to 30.)*
+
 > **Note:** Omit `low_stock_threshold`; it defaults to 30.
 ---
 
