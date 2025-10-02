@@ -126,6 +126,9 @@ http://localhost:3000
   "name": "Keyboard",
   "description": "Wireless mechanical keyboard",
   "stock_quantity": 10
+  "name": "Laptop Stand",
+  "description": "Aluminum adjustable laptop stand",
+  "stock_quantity": 7
 }
 ```
 
@@ -134,6 +137,9 @@ http://localhost:3000
   "name": "Mouse",
   "description": "Bluetooth ergonomic mouse",
   "stock_quantity": 15
+  "name": "Office Chair",
+  "description": "Ergonomic office chair with lumbar support",
+  "stock_quantity": 3
 }
 ```
 
@@ -142,10 +148,14 @@ http://localhost:3000
   "name": "Monitor",
   "description": "27-inch 4K UHD monitor",
   "stock_quantity": 5
+  "name": "USB Hub",
+  "description": "7-port USB 3.0 hub",
+  "stock_quantity": 25
 }
 ```
 
 *(Omit `low_stock_threshold`; defaults to 30.)*
+> **Note:** Omit `low_stock_threshold`; it defaults to 30.
 ---
 
 ## 🧪 Testing
