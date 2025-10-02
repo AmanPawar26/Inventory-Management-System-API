@@ -30,7 +30,7 @@ export const increaseStockQuantity = (req, res) => {
             res.status(200).json({
                 id,
                 old_stock_quantity: row.Stock_Quantity,
-                newstock_quantity: stock_quantity,
+                increase_by: stock_quantity,
                 updated_quantity: newStock,
                 message: "Stock Increased Successfully"
             })
@@ -85,10 +85,9 @@ export const productsBelowThreshold = (req, res) => {
             return res.status(500).json({error: 'Failed to list products below low stock quantity threshold'});
         }
         if(rows.length == 0){
-           return res.status(404).json({errror: 'No Products found below low stock quantity threshold'})
+           return res.status(404).json({error: 'No Products found below low stock quantity threshold'})
         }
         res.status(200).json(rows);
     })
 }
-
 
