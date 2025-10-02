@@ -89,6 +89,29 @@ http://localhost:3000
 
 ---
 
+## 📁 Folder Structure
+
+```
+inventory_management_system_api/
+├── src/
+│   ├── index.js                <-- Entry point (loads db/db.js, then app.js)
+│   ├── app.js                  <-- Express app setup
+│   ├── controllers/
+│   │   ├── products.controller.js    <-- CRUD logic
+│   │   └── managestock.controller.js <-- Increase/Decrease/Low Stock logic
+│   ├── routes/
+│   │   ├── products.routes.js       <-- CRUD endpoints
+│   │   └── managestock.routes.js    <-- Stock endpoints
+│   ├── db/
+│   │   └── db.js                   <-- SQLite connection & table creation
+│   └── Unit_Tests/                  <-- Jest unit tests
+├── src/Inventory_Management_System.postman_collection.json  <-- Postman collection
+├── .env
+├── package.json
+└── README.md
+```
+
+
 ## 📦 Sample JSON Data for POST Requests
 
 ```json
@@ -118,28 +141,6 @@ http://localhost:3000
 > **Note:** Omit `low_stock_threshold`; it defaults to 30.
 
 ---
-
-## 📁 Folder Structure
-
-```
-inventory_management_system_api/
-├── src/
-│   ├── index.js                <-- Entry point (loads db/db.js, then app.js)
-│   ├── app.js                  <-- Express app setup
-│   ├── controllers/
-│   │   ├── products.controller.js    <-- CRUD logic
-│   │   └── managestock.controller.js <-- Increase/Decrease/Low Stock logic
-│   ├── routes/
-│   │   ├── products.routes.js       <-- CRUD endpoints
-│   │   └── managestock.routes.js    <-- Stock endpoints
-│   ├── db/
-│   │   └── db.js                   <-- SQLite connection & table creation
-│   └── Unit_Tests/                  <-- Jest unit tests
-├── src/Inventory_Management_System.postman_collection.json  <-- Postman collection
-├── .env
-├── package.json
-└── README.md
-```
 
 ---
 
