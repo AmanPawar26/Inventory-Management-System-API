@@ -26,6 +26,28 @@ It allows CRUD operations on products, stock management (increase/decrease), and
 
 ---
 
+## 📁 Folder Structure
+
+```
+inventory_management_system_api/
+├── src/
+│   ├── index.js                <-- Entry point (loads db/db.js, then app.js)
+│   ├── app.js                  <-- Express app setup
+│   ├── controllers/
+│   │   ├── products.controller.js    <-- CRUD logic
+│   │   └── managestock.controller.js <-- Increase/Decrease/Low Stock logic
+│   ├── routes/
+│   │   ├── products.routes.js       <-- CRUD endpoints
+│   │   └── managestock.routes.js    <-- Stock endpoints
+│   ├── db/
+│   │   └── db.js                   <-- SQLite connection & table creation
+│   └── Unit_Tests/                  <-- Jest unit tests
+├── src/Inventory_Management_System.postman_collection.json  <-- Postman collection
+├── .env
+├── package.json
+└── README.md
+```
+
 ## 🔧 Setup Instructions
 
 ### 1. Clone the Repository
@@ -89,28 +111,13 @@ http://localhost:3000
 
 ---
 
-## 📁 Folder Structure
+## 📫 Quick Postman Testing
+
+1. Import `src/Inventory_Management_System.postman_collection.json` in Postman.
+2. Update the base URL to `http://localhost:3000`.
+3. Test all CRUD and stock endpoints immediately without manual setup.
 
 ```
-inventory_management_system_api/
-├── src/
-│   ├── index.js                <-- Entry point (loads db/db.js, then app.js)
-│   ├── app.js                  <-- Express app setup
-│   ├── controllers/
-│   │   ├── products.controller.js    <-- CRUD logic
-│   │   └── managestock.controller.js <-- Increase/Decrease/Low Stock logic
-│   ├── routes/
-│   │   ├── products.routes.js       <-- CRUD endpoints
-│   │   └── managestock.routes.js    <-- Stock endpoints
-│   ├── db/
-│   │   └── db.js                   <-- SQLite connection & table creation
-│   └── Unit_Tests/                  <-- Jest unit tests
-├── src/Inventory_Management_System.postman_collection.json  <-- Postman collection
-├── .env
-├── package.json
-└── README.md
-```
-
 
 ## 📦 Sample JSON Data for POST Requests
 
@@ -142,15 +149,6 @@ inventory_management_system_api/
 
 ---
 
----
-
-## 🔐 Important Notes
-
-* Database (`inventory.db`) is created automatically on first run.
-* Postman collection included for quick API testing: `src/Inventory_Management_System.postman_collection.json`.
-
----
-
 ## 🧪 Testing
 
 Run unit tests:
@@ -168,6 +166,13 @@ Tests cover:
 
 ---
 
+## 🔐 Important Notes
+
+* Database (`inventory.db`) is created automatically on first run.
+* Postman collection included for quick API testing: `src/Inventory_Management_System.postman_collection.json`.
+
+---
+
 ## 📌 Assumptions & Design Choices
 
 1. `Low_Stock_Threshold` defaults to `30` if not provided.
@@ -178,11 +183,3 @@ Tests cover:
 6. Postman collection included for easy API testing.
 
 ---
-
-## 📫 Quick Postman Testing
-
-1. Import `src/Inventory_Management_System.postman_collection.json` in Postman.
-2. Update the base URL to `http://localhost:3000`.
-3. Test all CRUD and stock endpoints immediately without manual setup.
-
-```
