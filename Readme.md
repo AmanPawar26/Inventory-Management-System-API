@@ -121,7 +121,6 @@ http://localhost:3000
 
 ## 📦 Sample JSON Data for POST Requests
 
-```json
 {
   "name": "Laptop Stand",
   "description": "Aluminum adjustable laptop stand",
