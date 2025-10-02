@@ -1,7 +1,7 @@
 
 # 🛠️ Inventory Management System API – Backend
 
-This is a **simple Inventory Management System API** built using **Node.js, Express, and SQLite**.  
+This is a **simple Inventory Management System API** built using **Node.js, Express.js, and SQLite**.  
 It allows CRUD operations on products, stock management (increase/decrease), and listing products below their low stock threshold.
 
 ---
