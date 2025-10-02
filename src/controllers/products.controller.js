@@ -5,10 +5,25 @@ import db from '../db/db.js'
 export const getAllProducts = (req, res) => {
     db.all('SELECT * FROM Products', (err, rows) => {
         if(err){
-            console.err('Database Read Error:', err);
+            console.error('Database Read Error:', err);
             return res.status(500).json({error: 'Failed to fetch Properties'})
         }
-        res.json(rows)
+        res.status(200).json(rows)
+    })
+}
+
+// Get Property By Id
+export const getProductById = (req, res) => {
+    const {id} = req.params;
+    db.get('SELECT * FROM Products WHERE id = ?',[id], (err, rows) => {
+        if(err){
+            console.err('Database Read Error:', err);
+            return res.status(500).json({error: 'Failed to fetch Properties for the given id "${id}"'});
+        }
+        if(!rows){
+        return res.status(404).json({error: 'Product not found'});
+    }
+        res.status(200).json(rows)
     })
 }
 
@@ -54,7 +69,7 @@ export const updateProducts = (req, res) => {
         if(this.changes === 0) {
            return res.status(404).json({error: 'Product not found'})
         }
-        res.json({message: 'Product Updated', changes: this.changes
+        res.status(200).json({message: 'Product Updated', changes: this.changes
         })
     });
 };
