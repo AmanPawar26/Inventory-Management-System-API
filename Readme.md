@@ -119,21 +119,19 @@ http://localhost:3000
 
 ```
 
-## 📦 Sample JSON Data for POST Requests
-
-```json
+ ## 📦 Sample JSON Data for POST Requests
 {
   "name": "Laptop Stand",
   "description": "Aluminum adjustable laptop stand",
   "stock_quantity": 7
 }
-json
+
 {
   "name": "Office Chair",
   "description": "Ergonomic office chair with lumbar support",
   "stock_quantity": 3
 }
-json
+
 {
   "name": "USB Hub",
   "description": "7-port USB 3.0 hub",
