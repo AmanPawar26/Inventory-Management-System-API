@@ -127,24 +127,18 @@ http://localhost:3000
   "description": "Aluminum adjustable laptop stand",
   "stock_quantity": 7
 }
-```
-
-```json
+json
 {
   "name": "Office Chair",
   "description": "Ergonomic office chair with lumbar support",
   "stock_quantity": 3
 }
-```
-
-```json
+json
 {
   "name": "USB Hub",
   "description": "7-port USB 3.0 hub",
   "stock_quantity": 25
 }
-```
-
 
 > **Note:** Omit `low_stock_threshold`; it defaults to 30.
 ---
