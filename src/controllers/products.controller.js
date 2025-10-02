@@ -1,7 +1,6 @@
 import db from '../db/db.js'
 
 // Get All Properties (GET)
-
 export const getAllProducts = (req, res) => {
     db.all('SELECT * FROM Products', (err, rows) => {
         if(err){
@@ -12,7 +11,7 @@ export const getAllProducts = (req, res) => {
     })
 }
 
-// Get Property By Id
+// Get Product By Id
 export const getProductById = (req, res) => {
     const {id} = req.params;
     db.get('SELECT * FROM Products WHERE id = ?',[id], (err, rows) => {
@@ -27,6 +26,7 @@ export const getProductById = (req, res) => {
     })
 }
 
+// Create a new product
 export const createProducts = (req, res) => {
     const {name, description, stock_quantity, low_stock_threshold} = req.body;
     const sql = `
@@ -44,6 +44,7 @@ export const createProducts = (req, res) => {
     });
 };
 
+// Update a product by Id
 export const updateProducts = (req, res) => {
     const {id} = req.params;
     const {name, description, stock_quantity} = req.body;
@@ -71,6 +72,7 @@ export const updateProducts = (req, res) => {
     });
 };
 
+// Delete a product by Id
 export const deleteProducts = (req, res) => {
     const {id} = req.params;
     db.run('DELETE FROM Products WHERE id = ?', [id],
