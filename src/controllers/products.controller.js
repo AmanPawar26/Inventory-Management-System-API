@@ -30,10 +30,7 @@ export const getProductById = (req, res) => {
 export const createProducts = (req, res) => {
     const {name, description, stock_quantity, low_stock_threshold} = req.body;
     const sql = `
-    INSERT INTO Products (
-    Name, Description, Stock_Quantity, Low_Stock_Threshold
-    ) VALUES (?, ?, ?, ?)
-    `;
+    INSERT INTO Products (Name, Description, Stock_Quantity, Low_Stock_Threshold) VALUES (?, ?, ?, ?)`;
     const params = [
         name, description, stock_quantity, low_stock_threshold || 30
     ];
