@@ -7,9 +7,9 @@ const app = express();
 
 app.use(express.json());
 
-
+app.use('/stock', manageStockRoutes)
 app.use('/api', productRoutes);
-app.use('/api', manageStockRoutes)
+
 
 
 export default app;
