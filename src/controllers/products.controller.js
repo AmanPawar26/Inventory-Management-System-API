@@ -49,6 +49,11 @@ export const updateProducts = (req, res) => {
     const {id} = req.params;
     const {name, description, stock_quantity} = req.body;
 
+     if(stock_quantity < 0){
+        return res.status(400).json({error: 'Stock quantity cannot be less than zero'})
+    }
+
+
     const sql = `
     UPDATE Products SET
     Name = ?,
